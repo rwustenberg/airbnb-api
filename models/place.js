@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const Place = mongoose.model("place", {
-  title: String,
-  description: String,
-  type: String,
-  city: String,
-  country: String,
-  price: Number,
-  rating: Number,
-  guests: Number,
-  bathrooms: Number
+  title: { type: String, required: [true, "title of place"] },
+  description: { type: String, required: [true, "description is required"] },
+  type: { type: String, required: [true, "type of accomodation"] },
+  city: { type: String, required: [true, "City"] },
+  country: { type: String, required: [true, "enter country name"] },
+  price: { type: Number, required: [true, "give me your money"] },
+  rating: { type: Number, default: 0 },
+  guests: { type: Number, required: [true, "How many People?"] },
+  bathrooms: { type: Number, required: [true, "How many toilets do you need"] }
 });
 
 module.exports = Place;

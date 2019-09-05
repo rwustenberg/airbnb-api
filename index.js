@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const database = require("./database.js");
-
+const place = require("./place.js");
 const app = express();
 
 let places = [
