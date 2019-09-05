@@ -27,6 +27,12 @@ app.post("/places", (req, res) => {
     })
     .catch(err => {});
 });
+app.get("/places", (req, res) => {
+  const Place = require("./models/place");
+  Place.find({}).then(data => {
+    res.send(data);
+  });
+});
 
 app.listen(4000, () => {
   console.log("Ready on port 4000");
