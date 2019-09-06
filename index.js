@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const body parser = require("body-parser")
 
 const database = require("./database.js");
 
@@ -8,6 +9,8 @@ const app = express();
 app.get("/", (req, res) => {
   res.send("Welcome to Airbnb API");
 });
+app.use(bodyParser.urlencoded({ extend: false }))
+app.use(bodyParser.json())
 
 app.post("/places", (req, res) => {
   const Place = require("./models/place");
