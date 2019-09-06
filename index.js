@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Airbnb API");
 });
 
-app.get("/places", require("./controllers/getPlaces"));
+app.get("/places", require("./controllers/getPlace"));
 app.post("/places", require("./controllers/postPlace"));
 app.get("/places/:id", require("./controllers/getPlace"));
 app.patch("/places/:id", require("./controllers/patchPlace"));
