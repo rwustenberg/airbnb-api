@@ -1,9 +1,7 @@
 const Place = require("../models/place");
-const mongoose = require("mongoose");
 
 module.exports = (req, res) => {
-  console.log(req.body);
-  Place.create(req.body)
+  Place.findOne({ _id: req.params.id })
     .then(data => {
       res.send(data);
     })
