@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.get("/places", require("./controllers/getPlaces"));
 app.post("/places", require("./controllers/postPlace"));
 app.get("/places/:id", require("./controllers/getPlace"));
-
+app.patch("/places/:id", require("./controllers/patchPlace"));
 // app.post("/places", (req, res) => {
 //   const Place = require("./models/place");
 //   Place.create({
