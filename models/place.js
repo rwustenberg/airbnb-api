@@ -8,6 +8,10 @@ const Place = mongoose.model("place", {
     ref: "type",
     required: [true, "Type of property"]
   },
+  host: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user"
+  },
   city: { type: String, required: [true, "City"] },
   country: { type: String, required: [true, "enter country name"] },
   price: { type: Number, required: [true, "give me your money"] },
