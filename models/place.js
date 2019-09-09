@@ -17,7 +17,9 @@ const Place = mongoose.model("place", {
   price: { type: Number, required: [true, "give me your money"] },
   rating: { type: Number, default: 0 },
   guests: { type: Number, required: [true, "How many People?"] },
-  bathrooms: { type: Number, required: [true, "How many toilets do you need"] }
+  bathrooms: { type: Number, required: [true, "How many toilets do you need"] },
+  images: [String],
+  amenities: { type: [mongoose.Schema.Types.ObjectId, { ref: "amenity" }] }
 });
 
 module.exports = Place;
