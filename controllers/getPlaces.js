@@ -1,12 +1,13 @@
 const Place = require("../models/place");
 const Review = require("../models/review");
+const Type = require("../models/type");
 
 module.exports = (req, res) => {
   console.log("get places");
   Place.find({})
     .populate("type")
-    .populate("host")
-    .select("guests description city country images price title type")
+    .populate("host"
+    .select("type guests description city country images price title type")
     .lean()
     .then(data => {
       let places = data.map(p => {
