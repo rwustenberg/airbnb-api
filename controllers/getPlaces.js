@@ -15,7 +15,6 @@ module.exports = (req, res) => {
           .then(reviews => {
             p.reviews = reviews.length;
             p.image = p.images[0];
-            //p.type = p.type.name;
             delete p.images;
             return p;
           })
