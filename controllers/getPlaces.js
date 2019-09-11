@@ -6,8 +6,8 @@ module.exports = (req, res) => {
   console.log("get places");
   Place.find({})
     .populate("type")
-    .populate("host"
-    .select("type guests description city country images price title type")
+    .populate("host")
+    .select("guests description city country images price title type")
     .lean()
     .then(data => {
       let places = data.map(p => {
@@ -15,6 +15,7 @@ module.exports = (req, res) => {
           .then(reviews => {
             p.reviews = reviews.length;
             p.image = p.images[0];
+            //p.type = p.type.name;
             delete p.images;
             return p;
           })
