@@ -26,6 +26,7 @@ app.get("/place/:id", require("./controllers/getPlace"));
 app.post("/reviews", require("./controllers/postReviews"));
 app.get("/reviews", require("./controllers/getReviews"));
 app.post("/signup", require("./controllers/postSignup"));
+app.post("/pay", require("./controllers/pay"));
 
 app.listen(process.env.PORT, () => {
   console.log(`Ready on ${process.env.PORT}}`);
